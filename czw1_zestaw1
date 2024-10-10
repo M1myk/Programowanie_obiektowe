@@ -1,0 +1,95 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String imie = "Dmytro Zvir";
+      System.out.println(imie);
+      System.out.println(imie.length());
+      String s1="Ala " ; 
+      String s2 ="ma "  ; 
+      String s3="kota" ;
+      String ala = s1 + s2 + s3;
+      
+      
+      System.out.println(ala);
+      System.out.println("          *");
+      System.out.println("          **");
+      System.out.println("          ***");
+      System.out.println("**************");
+      System.out.println("***************");
+      System.out.println("**************");
+      System.out.println("          ***");
+      System.out.println("          **");
+      System.out.println("          *");
+      
+      System.out.println("     *");
+      System.out.println("    * *");
+      System.out.println("   * * *");
+      System.out.println("  * * * *");
+      System.out.println(" * * * * *");
+      System.out.println("* * * * * * ");
+      System.out.println(" * * * * * ");
+      System.out.println("  * * * *");
+      System.out.println("   * * *");
+      System.out.println("    * *");
+      System.out.println("     *");
+      
+
+      
+      System.out.println(ala.replace('a', 'e'));
+      System.out.println(ala.toUpperCase());
+      System.out.println(ala.toLowerCase());
+      
+      
+      System.out.println((int) 'A');
+      System.out.println((int) '!');
+      System.out.println((int) '@');
+      System.out.println((int) '>');
+      System.out.println((int) '~');
+      System.out.println((int) '\n');
+      System.out.print((int) 'a'+", ");
+      System.out.println((int) 'z');
+      System.out.println("male litery - [97,122]");
+      System.out.print((int) 'A'+", ");
+      System.out.println((int) 'Z');
+      System.out.println("duze litery - [65,90]");
+      System.out.print((int) '0'+ ", ");
+      System.out.println((int) '9');
+      System.out.println("cyfry - [48,57]");
+      
+    
+      String zdanie = "Grzesiek nie wiedzial dlaczego ... jest tak drapieznym ... mimo, ze jego ... na to nie wskazuje.";
+      String sl1 ="bieganie";
+      String sl2 ="sportem";
+      String sl3 ="ciekawosc";
+      zdanie = zdanie.replaceFirst("\\.\\.\\.", sl1);
+      zdanie = zdanie.replaceFirst("\\.\\.\\.", sl2);
+      zdanie = zdanie.replaceFirst("\\.\\.\\.", sl3);
+      System.out.println(zdanie);
+      
+      String zdanie1 = "... to najlepsza ksiazka napisana przez ...";
+      String tytul ="Pisi-kaki";
+      String autor ="Poplawski";
+      
+      zdanie1 = zdanie1.replaceFirst("\\.\\.\\.", tytul);
+      zdanie1 = zdanie1.replaceFirst("\\.\\.\\.", autor);
+      
+      System.out.println(zdanie1);
+      
+      for(int i = 0;i < 5;i++)
+      {
+        System.out.println("wodrze");
+      }
+      
+      String dzein = "04-10-2024";
+      String godzina = "17:30:28";
+      
+      System.out.println("Dzisiaj jest " + dzein + " godzina " + godzina);
+      
+      System.out.println((char) 54);
+      System.out.println((char) 103);
+      System.out.println((char) 241);
+      System.out.println((char) 67);
+      System.out.println((char) 9999);
+      System.out.println((char) 11);
+      System.out.println((char) 177295);
