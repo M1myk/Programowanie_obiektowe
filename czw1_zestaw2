@@ -1,0 +1,93 @@
+import java.util.*;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      double result = 0;
+      result = 23.0+76;
+      System.out.println((int)result);
+      result = 0;
+      
+      result = 41*2.0+3;
+      System.out.println((int)result);
+      result = 0;
+      
+      result = 5-33;
+      System.out.println((int)result);
+      result = 0;
+      
+      result = 109%3;
+      System.out.println((int)result);
+      result = 0;
+      
+      result = 50/2;
+      System.out.println((int)result);
+      result = 0;
+      
+      
+      result = 3&9;
+      System.out.println((int)result);
+      result = 0;
+      
+      result = Math.pow(3,5);
+      System.out.println((int)result);
+      result = 0;
+      
+      
+      result = (Math.pow(7,0.5)-1)/2 + Math.pow(3,3) % 2;
+      System.out.println(result);
+      System.out.println((int)result);
+      result = 0;
+      
+      result = 2006/(15*1);
+      System.out.println(result);
+      System.out.println((int)result);
+      result = 0;
+      
+      result = (3+Math.pow(3,0.5)/Math.pow(5,0.5)/3)+1;
+      System.out.println(result);
+      System.out.println((int)result);
+      result = 0;
+      
+      System.out.println(5%2%2);
+      
+      result = (7^(1/2)-1)/2 + 3^3%2;
+      System.out.println(result);
+      
+      Scanner scanner = new Scanner(System.in);
+
+        /*
+        
+        System.out.println("Podaj pierwsze slowo: ");
+        String slowo1 = scanner.nextLine();
+        
+        System.out.println("Podaj drugie slowo: ");
+        String slowo2 = scanner.nextLine();
+
+        System.out.println("Pierwsze slowo: " + slowo1);
+        System.out.println("Drugie slowo: " + slowo2);
+        */
+        
+        
+        System.out.println("Podaj pierwsza liczbe: ");
+        int liczba1 = scanner.nextInt();
+        System.out.println("Podaj druga liczbe: ");
+        int liczba2 = scanner.nextInt();
+        
+        
+        System.out.printf("To jest suma %d i %d: %d%n", liczba1,liczba2,liczba1+liczba2);
+        
+        System.out.printf("To jest roznica %d i %d: %d%n", liczba1,liczba2,liczba1-liczba2);
+        
+        System.out.printf("To jest iloczyn %d i %d: %d%n", liczba1,liczba2,liczba1*liczba2);
+        
+        if (liczba2 != 0) {
+            System.out.printf("To jest iloraz %d i %d: %.2f%n", liczba1, liczba2, (double) liczba1 / liczba2);
+        } else {
+            System.out.println("Blad.");
+        }
+      
+      
+
+  }
+}
