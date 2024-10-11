@@ -1,0 +1,208 @@
+import java.util.*;
+
+public class Main {
+  
+    public static void main(String[] args) {
+        
+        //pita(25);  
+        //funKwarozwiazanie(30);
+        //funKwaDelta(3);
+        //LiczaPierwsza(30);
+        //piramida(5,2);
+        //silnia(5);
+        //silniaPod(6);
+        //silniaPocz(11,5);
+        dwumianNewtona(5,3);
+    }
+    public static void pita(int n) 
+    {
+      
+      
+      for(int i = 0; i <= n;i++)
+      {
+        for(int j = 0; j < i; j++)
+        {
+          for(int k = 0; k<i;k++)
+          {
+            if(j*j+k*k==i*i)
+            {
+              if(j<k)
+              {
+                 System.out.printf("(%d,%d,%d)%n", j,k,i);
+              }
+             
+            }
+          }
+        }
+      }
+    }
+  
+ 
+  public static void funKwarozwiazanie(int n)
+  {
+    for(int i = 0; i <= n; i++)
+    {
+      for(int a = 1; a < i; a++)
+      {
+        for(int b = 0; b < i; b++)
+        {
+          for(int c = 0; c<i;c++)
+          {
+            if(b*b-4*a*c >= 0)
+            {
+              System.out.printf("(%d, %d, %d)%n", a,b,c);
+            }
+          }
+        }
+      }
+    }
+  }
+      
+    
+  
+   
+  public static void funKwaDelta(int n)
+  {
+    int delta = 0;
+    for(int i = 0; i <= n; i++)
+    {
+      for(int a = 1; a < i; a++)
+      {
+        for(int b = 0; b < i; b++)
+        {
+          for(int c = 0; c<i;c++)
+          {
+            delta = b*b-4*a*c;
+            for(int k = 0; k < i; k++)
+            {
+              if(k*k == delta)
+              {
+                if(delta >= 0 )
+                {
+                  System.out.printf("(%d, %d, %d)%n", a,b,c);
+                }
+              }
+            }
+          }
+        }
+      }
+    } 
+  }
+  
+ public static void LiczaPierwsza(int n) {
+        for (int i = 2; i <= n; i++) {
+            if (czyPierwsza(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public static boolean czyPierwsza(int liczba) {
+        if (liczba < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(liczba); i++) {
+            if (liczba % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+  
+  
+  public static void piramida(int n, int variant)
+  {
+    String pom = "";
+    
+    if(variant == 1)
+    {
+      for(int i = 0; i < n; i++)
+      {
+        pom += "*";
+        System.out.println(pom);
+      }
+    }
+    
+    if(variant == 2)
+    {
+      for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println(); 
+        }
+    }
+  }
+  
+  public static void silnia(int n)
+  {
+    int wynik = 1;
+    for(int i = 1;i <=n; i++)
+    {
+      wynik *= i;
+    }
+    System.out.printf("%d%n", wynik);
+  }
+  
+  
+  public static void silniaPod(int n)
+  {
+    int wynik = 1;
+    for(int i = 1; i <= n; i++)
+    {
+      if(i % 2 == 1)
+      {
+        wynik *= i;
+      }
+    }
+    System.out.printf("%d%n", wynik);
+  }
+  
+  public static void silniaPocz(int n, int m)
+  {
+    int i = 1;
+    int wynik = 1;
+    while(i <= n)
+    {
+      wynik*=i;
+      i += m;
+    }
+    System.out.printf("%d%n", wynik);
+  }
+  
+  
+  public static void dwumianNewtona(int n, int k)
+  {
+    int licznik = 1;
+    int mianownik = 0;
+    int pom = 1;
+    for(int i = 1; i <= n; i++)
+    {
+      licznik*=i;
+    }
+    
+    for(int j = 1; j <= k;j++)
+    {
+      pom*=j;
+    }
+    mianownik+=pom;
+    pom = 1;
+    for(int g = 1; g <= n-k;g++)
+    {
+      pom*=g;
+    }
+    
+    licznik *= pom;
+    int wynik = licznik/mianownik;
+    
+    
+    
+    System.out.printf("%d", wynik);
+  }
+}
