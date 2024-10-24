@@ -1,0 +1,224 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
+public class Main {
+    public static ArrayList<Integer> append(ArrayList<Integer> tab1, ArrayList<Integer> tab2) {
+        ArrayList<Integer> result = new ArrayList<>(tab1);
+        result.addAll(tab2);
+        return result;
+    }
+
+    public static ArrayList<Integer> merge(ArrayList<Integer> tab1, ArrayList<Integer> tab2)
+    {
+        ArrayList<Integer> result = new ArrayList<>();
+        int size1 = tab1.size();
+        int size2 = tab2.size();
+        int maxSize =  Math.max(size1, size2);
+
+
+        for(int i = 0; i < maxSize; i++)
+        {
+            if(i < size1)
+            {
+                result.add(tab1.get(i));
+            }
+            if(i < size2)
+            {
+                result.add(tab2.get(i));
+            }
+        }
+        return result;
+    }
+
+    public static ArrayList<Integer> merge_sort(ArrayList<Integer> tab1, ArrayList<Integer> tab2)
+    {
+        ArrayList<Integer> result = new ArrayList<>();
+
+        int i = 0, j = 0;
+
+        while(i < tab1.size() && j < tab2.size())
+        {
+            if(tab1.get(i) <= tab2.get(j))
+            {
+                result.add(tab1.get(i));
+                i++;
+            }
+            else
+            {
+                result.add(tab2.get(j));
+                j++;
+            }
+
+            while (i < tab1.size())
+            {
+                result.add(tab1.get(i));
+                i++;
+            }
+            while ( j < tab2.size())
+            {
+                result.add(tab2.get(j));
+                j++;
+            }
+        }
+
+        return result;
+    }
+
+    public static ArrayList<ArrayList<String>> uniqueArrayList(ArrayList<Integer> tab)
+    {
+        ArrayList<ArrayList<String>> result = new ArrayList<>();
+
+
+        for(int i = 0; i < tab.size(); i++)
+        {
+            boolean unikalny = true;
+            for(int j = 0; j < i; j++)
+            {
+                if (tab.get(i).equals(tab.get(j))) {
+
+                    unikalny = false;
+                    break;
+                }
+            }
+            if(unikalny)
+            {
+                ArrayList<String> pom = new ArrayList<>();
+                pom.add(tab.get(i) + ",0");
+                result.add(pom);
+            }
+
+        }
+        return result;
+    }
+
+    public static ArrayList<String> toArrayList(String napis) {
+
+        ArrayList<String> tab = new ArrayList<>();
+
+        char[] lista = napis.toCharArray();
+
+
+        boolean zamieniono = true;
+        while(zamieniono)
+        {
+            zamieniono = false;
+            for(int i = 0; i < lista.length-1; i++)
+            {
+
+
+                if(lista[i] > lista[i+1])
+                {
+                    char temp = lista[i];
+                    lista[i] = lista[i+1];
+                    lista[i+1] = temp;
+                    zamieniono = true;
+                }
+            }
+        }
+
+
+        for(int i = 0; i < lista.length; i++)
+        {
+            if(lista[i]  != ' ')
+            {
+                tab.add(String.valueOf(lista[i]));
+            }
+
+
+        }
+
+
+        return tab;
+    }
+
+    public static int[] toArrayList(int liczba) {
+
+        String strLiczba = Integer.toString(liczba);
+
+        int[] lista = new int[strLiczba.length()];
+        for (int i = 0; i < strLiczba.length(); i++) {
+            lista[i] = Character.getNumericValue(strLiczba.charAt(i));
+        }
+
+
+        boolean zamieniono =true;
+        while(zamieniono)
+        {
+            zamieniono = false;
+            for(int i = 0; i < lista.length-1; i++)
+            {
+                if(lista[i] > lista[i+1])
+                {
+                    int temp = lista[i];
+                    lista[i] = lista[i+1];
+                    lista[i+1] = temp;
+
+                    zamieniono = true;
+                }
+            }
+        }
+
+
+
+        return lista;
+    }
+
+    public static boolean chekChar(ArrayList<String> tab, String znak)
+    {
+        for(int i = 0; i < tab.size(); i++)
+        {
+            if(znak.equals(tab.get(i)))
+            {
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
+
+
+    public static void main(String[] args) {
+        //ArrayList<Integer> lista1 = new ArrayList<>(Arrays.asList(1, 2, 3));
+        ArrayList<Integer> lista1 = new ArrayList<>();
+        lista1.add(1);
+        lista1.add(2);
+        lista1.add(3);
+
+        ArrayList<Integer> lista2 = new ArrayList<>();
+        lista2.add(4);
+        lista2.add(5);
+        lista2.add(4);
+        lista2.add(6);
+        lista2.add(7);
+
+        ArrayList<Integer> wynik = append(lista1, lista2);
+        ArrayList<Integer> merged = merge(lista1, lista2);
+        ArrayList<Integer> merged_sort = merge_sort(lista1, lista2);
+        ArrayList<ArrayList<String>> zadanie7 = uniqueArrayList(lista2);
+
+
+        System.out.println("Połączona lista: " + wynik);
+        System.out.println("Po kolei: " + merged);
+        System.out.println("Posortowane: " + merged_sort);
+
+        String napis = "baba lubi srac";
+        ArrayList<String> zadanie4 = toArrayList(napis);
+        System.out.println(zadanie4);
+
+        int liczba = 12461362;
+        int[] zadanie4_1 = toArrayList(liczba);
+        System.out.println(Arrays.toString(zadanie4_1));
+
+        String znak = "i";
+        boolean zadanie5 = chekChar(zadanie4, znak);
+        System.out.println(zadanie5);
+
+
+
+
+        System.out.println("Wynik: " + zadanie7);
+    }
+}
