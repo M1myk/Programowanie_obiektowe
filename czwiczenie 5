@@ -78,7 +78,7 @@ public class Main {
         return result;
     }
 
-public static double calculateArea(double a, double b, double c) {
+public static double wypisz(double a, double b, double c) {
         
         if (a + b > c && a + c > b && b + c > a) {
             double s = (a + b + c) / 2.0; 
