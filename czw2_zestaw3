@@ -120,6 +120,18 @@ public static void policz(int n) {
         }
         return true;
     }
+
+public static void cos(int n) {
+        while (n != 1) {
+            System.out.print(n + " ");
+            if (n % 2 == 0) {
+                n = n / 2;
+            } else {
+                n = 3 * n + 1;
+            }
+        }
+        System.out.print(n);  // Wypisanie ostatniej liczby 1
+    }
   
   
   public static void piramida(int n, int variant)
