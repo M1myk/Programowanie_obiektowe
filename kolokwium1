@@ -1,0 +1,175 @@
+ public class Main
+{
+    public static void main(String[] args)
+    {
+        System.out.println("zadanie 1: "+dokladnosc(6,4,2));
+
+        System.out.println("zadanie 2: "+najblizszySasiad(20));
+
+        System.out.println("zadanie 3: "+ pierwiastek(20,4,3));
+
+        int[] tab = new int[10];
+        tab[0] = 5;
+        tab[1] = 4;
+        tab[2] = 9;
+        tab[3] = 7;
+        tab[4] = 5;
+        tab[5] = 7;
+        tab[6] = 6;
+        tab[7] = 5;
+        tab[8] = 4;
+        tab[9] = 10;
+
+
+        System.out.println("zadanie 4: "+podciag(tab));
+
+        System.out.println("zadanie 5: "+podciag(tab,2));
+
+        int liczba = 123454321;
+        System.out.println("zadanie 6: "+czyPalindrom(liczba));
+
+        System.out.println("zadanie 7:");
+        palindromLiczbowy(2);
+    }
+
+    public static boolean dokladnosc(int x, int y, int k)
+    {
+        if(x > y)
+        {
+
+            return x-y == k;
+        }
+        else if(x < y)
+        {
+            return y-x == k;
+        }
+        else
+        {
+            return 0 == k;
+        }
+    }
+
+    public static int najblizszySasiad(int S)
+    {
+        int max_sasiad = 0;
+        for(int i = 0; i < S; i++)
+        {
+            if(i*i > max_sasiad*max_sasiad && i*i < S)
+            {
+                max_sasiad = i;
+            }
+        }
+        return max_sasiad;
+    }
+
+    public static double pierwiastek(int S, int n, int k)
+    {
+        double wynik = 0;
+       return wynik;
+    }
+
+    public static int podciag(int[] tab)
+    {
+        int min = 1;
+        int count = 1;
+
+        for(int i = 1; i < tab.length; i++)
+        {
+            if(tab[i] < tab[i-1])
+            {
+                count++;
+            }
+            else
+            {
+                if(min < count)
+                {
+                    min = count;
+                }
+
+
+                count = 1;
+            }
+        }
+        if(min < count)
+        {
+            min = count;
+        }
+
+        return min;
+    }
+
+    public static int podciag(int[] tab, int r)
+    {
+
+        int min = 1;
+        int count = 1;
+
+        for(int i = 0; i < tab.length-1; i++)
+        {
+            if(tab[i] - tab[i+1] == r)
+            {
+                count++;
+            }
+            else
+            {
+                if(min < count)
+                {
+                    min = count;
+                }
+                count = 1;
+            }
+        }
+        if(min < count)
+        {
+            min = count;
+        }
+
+
+
+        return min;
+
+
+    }
+
+    public static boolean czyPalindrom(int n) {
+        int oryginal = n;
+        int odwrocone = 0;
+
+        while (n > 0) {
+            int ostatniaCyfra = n % 10;
+            odwrocone = odwrocone * 10 + ostatniaCyfra;
+            n /= 10;
+        }
+
+        return oryginal == odwrocone;
+    }
+
+    public static void palindromLiczbowy(int m)
+    {
+        int max = 0;
+        int min = 0;
+
+        for(int i = 0; i < m; i++)
+        {
+            max = max * 10 + 9;
+        }
+
+        for(int j = 0; j < m-1; j++)
+        {
+            min = min * 10 + 9;
+        }
+
+        min += 1;
+       for(int i = min; i < max; i++)
+       {
+           for(int j = min; j <= i; j++) {
+               if (czyPalindrom(i * j)) {
+                   System.out.printf("%d x %d = %d%n", i, j, i * j);
+               }
+           }
+       }
+
+    }
+
+
+}
