@@ -9,18 +9,6 @@ public class Main {
         return result;
     }
 
-    public static boolean isPalindrome(int liczba) {
-        int original = liczba;
-        int reversed = 0;
-
-        while (liczba > 0) {
-            int ostatniaCyfra = liczba % 10;
-            reversed = reversed * 10 + ostatniaCyfra;
-            liczba /= 10;
-        }
-
-        return original == reversed;
-    }
 
     public static ArrayList<Integer> merge(ArrayList<Integer> tab1, ArrayList<Integer> tab2)
     {
@@ -78,15 +66,6 @@ public class Main {
         return result;
     }
 
-public static double wypisz(double a, double b, double c) {
-        
-        if (a + b > c && a + c > b && b + c > a) {
-            double s = (a + b + c) / 2.0; 
-            return Math.sqrt(s * (s - a) * (s - b) * (s - c)); 
-        } else {
-            return -1; 
-        }
-    }
 
     public static ArrayList<ArrayList<String>> uniqueArrayList(ArrayList<Integer> tab)
     {
@@ -211,18 +190,7 @@ public static double wypisz(double a, double b, double c) {
         lista1.add(3);
 
 
-        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Podaj liczbę całkowitą: ");
-        int liczba = scanner.nextInt();
-
-        if (isPalindrome(liczba)) {
-            System.out.println("Liczba jest palindromem.");
-        } else {
-            System.out.println("Liczba nie jest palindromem.");
-        }
-
-        
 
         ArrayList<Integer> lista2 = new ArrayList<>();
         lista2.add(4);
